@@ -9,6 +9,7 @@
 
 pacman::p_load(shiny, data.table, tidyverse, bslib, here)
 m <- as.matrix(fread(here("data", "dw_tactics_matrix.txt")))
+m <- round(m, 3)
 colnames(m) <- NULL
 m <- 
   m %>% 
