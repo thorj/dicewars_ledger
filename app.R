@@ -49,15 +49,13 @@ ui <- navbarPage(
             "<br/>",
             h4("The probabilities are based off 1,000,000 simulated games."),
             "<br/>",
-            a(h4("Play Dicewars at GameDesign"), href = "https://www.gamedesign.jp/games/dicewars/")
+            a(h4("Play Dicewars at GameDesign"), href = "https://www.gamedesign.jp/games/dicewars/"),
+            "<br/>",
+            a(h4("Source code"), href = "https://github.com/thorj/dicewars_ledger")
           )
         )),
       mainPanel()
     )
-  ),
-  tabPanel(
-    "Source", 
-    uiOutput("Link")
   )
 )
 
@@ -80,9 +78,6 @@ server <- function(input, output) {
              y = "#Dice (opponent)") +
         theme(legend.position = "none",
               text = element_text(size = 20))
-    })
-    output$Link <- renderUI({
-      a("test", href = "https://google.com")
     })
 }
 
